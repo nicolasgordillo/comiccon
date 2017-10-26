@@ -1,0 +1,18 @@
+<div class="container pad-top">
+  <a ui-sref="newPayment" class="btn-primary btn-lg nodecoration">Agregar nuevo pago</a>
+  <table class="table paymenttable">
+      <tr>
+          <td><h3>Pagos</h3></td>
+          <td></td>
+      </tr>
+      <tr ng-repeat="payment in payments">
+          <td>{{payment.date}}</td>
+          <td>{{payment.amount}}</td>
+          <td>{{payment.installments}}</td>
+          <td>
+              <a class="btn btn-primary" ui-sref="viewPayment({id:payment.id})">Ver</a>
+              <a class="btn btn-danger"  ng-click="deletePayment(payment)">Eliminar</a>
+          </td>
+      </tr>
+  </table>
+</div>
