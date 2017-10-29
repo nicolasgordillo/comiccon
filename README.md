@@ -11,3 +11,9 @@ Desarrollado utilizando Java, Spring Boot.
 - Instalar Maven (https://maven.apache.org/download.cgi). Elegir el bin apache-maven-3.5.0-bin.zip, descomprimirlo y agregarlo al path de Windows (Ir a sistema > Opciones avanzadas > Variables de entorno).
 	Para probar si la instalación fue correcta probar mvn -v en la línea de comandos.
 - Instalar IDE (Spring STS, es una versión basada en Eclipse, se puede bajar de https://spring.io/tools/sts/all)
+
+##Configuración
+- En el archivo de Maven pom.xml se pueden agregar dependencias que sean necesarias
+- En application.properties también podemos modificar diferentes configuraciones por defecto de Spring
+- Hay otros dos application.properties para ambientes de dev y prod, que podrían sobreescribir el application.properties original con algún otro cambio: puerto, db, etc.
+- Para cambiar el ambiente en el que se está ejecutando, ir al menú Run>Run Configurations. Elegir Java Application>App, y dentro de este el tab Arguments. En el texto VM arguments cambiar -Dspring.profiles.active=dev por lo que corresponda.
