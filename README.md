@@ -12,7 +12,7 @@ Desarrollado utilizando Java, Spring Boot.
 	Para probar si la instalación fue correcta probar mvn -v en la línea de comandos.
 - Instalar IDE (Spring STS, es una versión basada en Eclipse, se puede bajar de https://spring.io/tools/sts/all)
 
-##Configuración
+## Configuración
 - En el archivo de Maven pom.xml se pueden agregar dependencias que sean necesarias
 - En application.properties también podemos modificar diferentes configuraciones por defecto de Spring
 - Hay otros dos application.properties para ambientes de dev y prod, que podrían sobreescribir el application.properties original con algún otro cambio: puerto, db, etc.
