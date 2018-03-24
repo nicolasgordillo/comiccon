@@ -2,6 +2,9 @@ package com.boot.comiccon.model;
 
 import java.time.LocalDate;
 
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable
 public class Payment {
 	Long id;
 	LocalDate date;
