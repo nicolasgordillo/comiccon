@@ -3,9 +3,9 @@
     "-//Sun Microsystems, Inc.//DTD Java Data Objects Metadata 2.0//EN"
     "http://java.sun.com/dtd/jdo_2_0.dtd">
 <jdo>
-    <package name="com.boot.comiccon.model">
+    <package name="com.boot.subsidios.model">
         <class
-              name="Payment">
+              name="Proyecto">
             <field
                   name="id"
                   persistence-modifier="persistent"/>

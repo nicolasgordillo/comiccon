@@ -1,0 +1,23 @@
+<div class="container pad-top">
+  <table class="table proyectotable">
+      <tr>
+          <td><h3>Detalles del proyecto {{proyecto.id}}</h3></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Nombre</td>
+          <td>{{proyecto.nombre}}</td>
+      </tr>
+      <tr>
+          <td>Año de inicio</td>
+          <td>{{proyecto.anioInicio}}</td>
+      </tr>
+      <tr>
+          <td>Año de fin</td>
+          <td>{{proyecto.anioFin}}</td>
+      </tr>
+  </table>
+  <div>
+      <a class="btn btn-primary" ui-sref="editProyecto({id:proyecto.id})">Editar</a>
+  </div>
+</div>

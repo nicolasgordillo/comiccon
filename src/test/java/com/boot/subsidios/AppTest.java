@@ -1,4 +1,4 @@
-package com.boot.comiccon;
+package com.boot.subsidios;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

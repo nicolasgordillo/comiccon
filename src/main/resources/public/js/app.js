@@ -45,22 +45,22 @@
 					pageTitle: 'Home'
 				}
 			})
-			.state('payments',{
-	        url:'/payments',
-	        templateUrl: viewsPrefix + 'payments.html',
-	        controller:'PaymentListController'
-	    }).state('viewPayment',{
-	       url:'/payments/:id/view',
-	       templateUrl: viewsPrefix + 'payment-view.html',
-	       controller:'PaymentViewController'
-	    }).state('newPayment',{
-	        url:'/payments/new',
-	        templateUrl: viewsPrefix + 'payment-add.html',
-	        controller:'PaymentCreateController'
-	    }).state('editPayment',{
-	        url:'/payments/:id/edit',
-	        templateUrl: viewsPrefix + 'payment-edit.html',
-	        controller:'PaymentEditController'
+			.state('proyectos',{
+	        url:'/proyectos',
+	        templateUrl: viewsPrefix + 'proyectos.html',
+	        controller:'ProyectoListController'
+	    }).state('viewProyecto',{
+	       url:'/proyectos/:id/view',
+	       templateUrl: viewsPrefix + 'proyecto-view.html',
+	       controller:'ProyectoViewController'
+	    }).state('newProyecto',{
+	        url:'/proyectos/new',
+	        templateUrl: viewsPrefix + 'proyecto-add.html',
+	        controller:'ProyectoCreateController'
+	    }).state('editProyecto',{
+	        url:'/proyectos/:id/edit',
+	        templateUrl: viewsPrefix + 'proyecto-edit.html',
+	        controller:'ProyectoEditController'
 	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
@@ -68,7 +68,7 @@
 			return {
 				link: function(scope, element) {
 					var listener = function(event, toState) {
-						var title = 'ComicCon';
+						var title = 'Sistema de subsidios';
 						if (toState.data && toState.data.pageTitle) title = toState.data.pageTitle + ' - ' + title;
 						$timeout(function() {
 							element.text(title);

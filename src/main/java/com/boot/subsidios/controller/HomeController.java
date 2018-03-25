@@ -1,4 +1,4 @@
-package com.boot.comiccon.controller;
+package com.boot.subsidios.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

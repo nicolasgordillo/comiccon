@@ -17,6 +17,12 @@ body {
 .paymenttable tr:nth-child(1) td {
   border-top: none;
 }
+.proyectotable tr td:nth-child(2) {
+  width: 150px;
+}
+.proyectotable tr:nth-child(1) td {
+  border-top: none;
+}
 /* Have to set height explicity on ui-view
 to prevent collapsing during animation*/
 [ui-view] {

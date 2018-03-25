@@ -1,34 +1,34 @@
-angular.module('app.controllers', []).controller('PaymentListController', function($scope, $state, popupService, $window, Payment) {
-  $scope.payments = Payment.query(); //fetch all payments. Issues a GET to /api/vi/payments
+angular.module('app.controllers', []).controller('ProyectoListController', function($scope, $state, popupService, $window, Proyecto) {
+  $scope.proyectos = Proyecto.query(); //Trae todos los proyectos. Issues a GET to /api/vi/proyectos
 
-  $scope.deletePayment = function(payment) { // Delete a Payment. Issues a DELETE to /api/v1/payments/:id
-    if (popupService.showPopup('Está seguro de eliminar este pago?')) {
-      payment.$delete(function() {
-        $scope.payments = Payment.query(); 
-        $state.go('payments');
+  $scope.deleteProyecto = function(proyecto) { // Borra un proyecto. Issues a DELETE to /api/v1/proyectos/:id
+    if (popupService.showPopup('Está seguro de eliminar este proyecto?')) {
+    	proyecto.$delete(function() {
+        $scope.proyectos = Proyecto.query(); 
+        $state.go('proyectos');
       });
     }
   };
-}).controller('PaymentViewController', function($scope, $stateParams, Payment) {
-  $scope.payment = Payment.get({ id: $stateParams.id }); //Get a single payment.Issues a GET to /api/v1/payments/:id
-}).controller('PaymentCreateController', function($scope, $state, $stateParams, Payment) {
-  $scope.payment = new Payment();  //create new payment instance. Properties will be set via ng-model on UI
+}).controller('ProyectoViewController', function($scope, $stateParams, Proyecto) {
+  $scope.proyecto = Proyecto.get({ id: $stateParams.id }); //Obtiene un unico proyecto.Issues a GET to /api/v1/proyectos/:id
+}).controller('ProyectoCreateController', function($scope, $state, $stateParams, Proyecto) {
+  $scope.proyecto = new Proyecto();  //Crea una nueva instancia de Proyecto. Properties will be set via ng-model on UI
 
-  $scope.addPayment = function() { //create a new payment. Issues a POST to /api/v1/payments
-    $scope.payment.$save(function() {
-      $state.go('payments'); // on success go back to the list i.e. payments state.
+  $scope.addProyecto = function() { //Crea un nuevo proyecto. Issues a POST to /api/v1/proyectos
+    $scope.proyecto.$save(function() {
+      $state.go('proyectos'); // Si sale todo bien vuelve a la lista.
     });
   };
-}).controller('PaymentEditController', function($scope, $state, $stateParams, Payment) {
-  $scope.updatePayment = function() { //Update the edited payment. Issues a PUT to /api/v1/payments/:id
-    $scope.payment.$update(function() {
-      $state.go('payments'); // on success go back to the list i.e. payments state.
+}).controller('ProyectoEditController', function($scope, $state, $stateParams, Proyecto) {
+  $scope.updateProyecto = function() { //Actualiza el proyecto editado. Issues a PUT to /api/v1/proyectos/:id
+    $scope.proyecto.$update(function() {
+      $state.go('proyectos'); // Si sale todo bien vuelve a la lista
     });
   };
 
-  $scope.loadPayment = function() { //Issues a GET request to /api/v1/payments/:id to get a payment to update
-    $scope.payment = Payment.get({ id: $stateParams.id });
+  $scope.loadProyecto = function() { //Issues a GET request to /api/v1/proyectos/:id to get a proyecto to update
+    $scope.proyecto = Proyecto.get({ id: $stateParams.id });
   };
 
-  $scope.loadPayment(); // Load a payment which can be edited on UI
+  $scope.loadProyecto(); // Carga un proyecto que puede ser editado en UI
 });
