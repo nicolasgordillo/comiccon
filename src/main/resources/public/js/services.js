@@ -8,4 +8,10 @@ angular.module('app.services', []).factory('Proyecto', function($resource) {
     this.showPopup=function(message){
         return $window.confirm(message);
     }
+}).factory('Subsidio', function($resource) {
+  return $resource('/api/v1/subsidios/:id', { id: '@id' }, {
+    update: {
+      method: 'PUT'
+    }
+  });
 });

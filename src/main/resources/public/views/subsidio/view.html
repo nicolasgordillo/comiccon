@@ -1,0 +1,39 @@
+<div class="container pad-top">
+  <table class="table proyectotable">
+      <tr>
+          <td><h3>Subsidio {{entity.id}}</h3></td>
+          <td></td>
+      </tr>
+      <!--
+      <tr>
+          <td>Proyecto</td>
+          <td>{{ entity.proyecto.nombre }} ({{ entity.proyecto.anioInicio }}-{{ entity.proyecto.anioFin }})</td>
+      </tr>
+      -->
+      <tr>
+          <td>A&ntilde;o</td>
+          <td>{{entity.anio}}</td>
+      </tr>
+      <tr>
+          <td>Monto</td>
+          <td>{{entity.monto}}</td>
+      </tr>
+      <tr>
+          <td>Saldo a Imputar</td>
+          <td>{{entity.saldoAImputar}}</td>
+      </tr>
+      <tr>
+          <td>Fecha de adjudicaci&oacute;n</td>
+          <td>{{entity.fechaAdjudicacion}}</td>
+      </tr>
+      <tr>
+          <td>Fecha de acreditaci&oacute;n</td>
+          <td>{{entity.fechaAcreditacion}}</td>
+      </tr>
+  </table>
+  <div>
+      <a class="btn btn-primary" ui-sref="editSubsidio({id:entity.id})">Editar</a>
+      <a class="btn btn-primary" ng-click="back()">Volver</a>
+  </div>
+</div>
+

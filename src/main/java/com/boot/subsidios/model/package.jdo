@@ -5,18 +5,102 @@
 <jdo>
     <package name="com.boot.subsidios.model">
         <class
+              name="IncisoProyecto">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="monto"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="anio"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Responsable">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="dni"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="apellido"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="nombre"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Subsidio">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="monto"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="saldoAImputar"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="anio"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="fechaAdjudicacion"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="fechaAcreditacion"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="fechaMaximaEjecucion"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="fechaVencimiento"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="resolucionUnlp"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="nroOrdenPago"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="nroExpediente"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="observaciones"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="rendido"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
               name="Proyecto">
             <field
                   name="id"
                   persistence-modifier="persistent"/>
             <field
-                  name="date"
+                  name="nombre"
                   persistence-modifier="persistent"/>
             <field
-                  name="amount"
+                  name="anioInicio"
                   persistence-modifier="persistent"/>
             <field
-                  name="installments"
+                  name="anioFin"
+                  persistence-modifier="persistent"/>
+        </class>
+        <class
+              name="Imputacion">
+            <field
+                  name="id"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="fecha"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="monto"
+                  persistence-modifier="persistent"/>
+            <field
+                  name="descripcion"
                   persistence-modifier="persistent"/>
         </class>
     </package>

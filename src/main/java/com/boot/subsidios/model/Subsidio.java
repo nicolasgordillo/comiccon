@@ -1,12 +1,14 @@
 package com.boot.subsidios.model;
 
 import java.time.LocalDate;
+import javax.jdo.annotations.PersistenceCapable;
 
+@PersistenceCapable
 public class Subsidio {
-	Long id;
-	Float monto;
-	Float saldoAImputar;
-	Integer anio;
+	long id;
+	float monto;
+	float saldoAImputar;
+	int anio;
 	LocalDate fechaAdjudicacion;
 	LocalDate fechaAcreditacion;
 	LocalDate fechaMaximaEjecucion;
@@ -14,12 +16,15 @@ public class Subsidio {
 	String resolucionUnlp;
 	String nroOrdenPago;
 	String nroExpediente;
-	String observaciones;
-	Boolean rendido;
 	
-	public Subsidio(Long id, Float monto, Float saldoAImputar, Integer anio, LocalDate fechaAdjudicacion,
-			LocalDate fechaAcreditacion, LocalDate fechaMaximaEjecucion, LocalDate fechaVencimiento,
-			String resolucionUnlp, String nroOrdenPago, String nroExpediente, String observaciones, Boolean rendido) {
+	
+	/**
+	 * Constructor vacío
+	 */
+	public Subsidio() {	}
+
+	public Subsidio(long id, float monto, float saldoAImputar, int anio, LocalDate fechaAdjudicacion,
+			LocalDate fechaAcreditacion) {
 		super();
 		this.id = id;
 		this.monto = monto;
@@ -27,44 +32,37 @@ public class Subsidio {
 		this.anio = anio;
 		this.fechaAdjudicacion = fechaAdjudicacion;
 		this.fechaAcreditacion = fechaAcreditacion;
-		this.fechaMaximaEjecucion = fechaMaximaEjecucion;
-		this.fechaVencimiento = fechaVencimiento;
-		this.resolucionUnlp = resolucionUnlp;
-		this.nroOrdenPago = nroOrdenPago;
-		this.nroExpediente = nroExpediente;
-		this.observaciones = observaciones;
-		this.rendido = rendido;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public Float getMonto() {
+	public float getMonto() {
 		return monto;
 	}
 
-	public void setMonto(Float monto) {
+	public void setMonto(float monto) {
 		this.monto = monto;
 	}
 
-	public Float getSaldoAImputar() {
+	public float getSaldoAImputar() {
 		return saldoAImputar;
 	}
 
-	public void setSaldoAImputar(Float saldoAImputar) {
+	public void setSaldoAImputar(float saldoAImputar) {
 		this.saldoAImputar = saldoAImputar;
 	}
 
-	public Integer getAnio() {
+	public int getAnio() {
 		return anio;
 	}
 
-	public void setAnio(Integer anio) {
+	public void setAnio(int anio) {
 		this.anio = anio;
 	}
 
@@ -122,21 +120,5 @@ public class Subsidio {
 
 	public void setNroExpediente(String nroExpediente) {
 		this.nroExpediente = nroExpediente;
-	}
-
-	public String getObservaciones() {
-		return observaciones;
-	}
-
-	public void setObservaciones(String observaciones) {
-		this.observaciones = observaciones;
-	}
-
-	public Boolean getRendido() {
-		return rendido;
-	}
-
-	public void setRendido(Boolean rendido) {
-		this.rendido = rendido;
 	}
 }

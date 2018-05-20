@@ -62,6 +62,24 @@
 	        templateUrl: viewsPrefix + 'proyecto-edit.html',
 	        controller:'ProyectoEditController'
 	    })
+	    /* SUBSIDIO */
+	    .state('subsidios',{
+	       url:'/subsidios',
+	       templateUrl: viewsPrefix + 'subsidio/subsidios.html',
+	       controller:'SubsidioListController'
+	    }).state('viewSubsidio',{
+	       url:'/subsidios/:id/view',
+	       templateUrl: viewsPrefix + 'subsidio/view.html',
+	       controller:'SubsidioViewController'
+	    }).state('newSubsidio',{
+	        url:'/subsidios/new',
+	        templateUrl: viewsPrefix + 'subsidio/add.html',
+	        controller:'SubsidioCreateController'
+	    }).state('editSubsidio',{
+	        url:'/subsidios/:id/edit',
+	        templateUrl: viewsPrefix + 'subsidio/edit.html',
+	        controller:'SubsidioEditController'
+	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
 		function($rootScope, $timeout) {
