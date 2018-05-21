@@ -15,8 +15,8 @@
           <td>{{subsidio.anio}}</td>
           <td>{{subsidio.monto}}</td>
           <td>{{subsidio.saldoAImputar}}</td>
-          <td>{{subsidio.fechaAdjudicacion}}</td>
-          <td>{{subsidio.fechaAcreditacion}}</td>
+          <td>{{subsidio.fechaAdjudicacion | date:'dd/MM/yyyy'}}</td>
+          <td>{{subsidio.fechaAcreditacion | date:'dd/MM/yyyy'}}</td>
           <td>
               <a class="btn btn-primary" ui-sref="viewSubsidio({id:subsidio.id})">Ver</a>
               <a class="btn btn-danger"  ng-click="deleteSubsidio(subsidio)">Eliminar</a>
