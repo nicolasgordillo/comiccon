@@ -38,5 +38,20 @@
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-jsr310</artifactId>
 	</dependency>
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.datanucleus</groupId>
+	    <artifactId>datanucleus-api-jdo</artifactId>
+	    <version>3.0.0-m5</version>
+	</dependency>
+	<dependency>
+	    <groupId>javax.jdo</groupId>
+	    <artifactId>jdo-api</artifactId>
+	    <version>3.1</version>
+	</dependency>
   </dependencies>
 </project>
