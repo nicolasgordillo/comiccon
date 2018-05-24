@@ -17,6 +17,10 @@ angular.module('navController', [])
 			{
 				name: 'Proyectos',
 				url: '#/proyectos'
+			},
+			{
+				name: 'Subsidios',
+				url: '#/subsidios'
 			}
 		]
 	});

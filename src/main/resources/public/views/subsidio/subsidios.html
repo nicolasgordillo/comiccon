@@ -1,0 +1,27 @@
+<div class="container pad-top">
+<h3>Subsidios</h3>
+  <table class="table proyectotable">
+      <tr>
+           	<th>Id (debe ir nombre del pory.)</th>
+		    <th>A&ntilde;o</th>
+		    <th>Monto</th>
+		    <th>Saldo</th>
+		    <th>Fecha de adjudicaci&oacute;n</th>
+		    <th>Fecha de acreditaci&oacute;n</th>
+		    <th>Acciones</th>
+      </tr>
+      <tr ng-repeat="subsidio in subsidios">
+          <td>{{subsidio.id}}</td>
+          <td>{{subsidio.anio}}</td>
+          <td>{{subsidio.monto}}</td>
+          <td>{{subsidio.saldoAImputar}}</td>
+          <td>{{subsidio.fechaAdjudicacion | date:'dd/MM/yyyy'}}</td>
+          <td>{{subsidio.fechaAcreditacion | date:'dd/MM/yyyy'}}</td>
+          <td>
+              <a class="btn btn-primary" ui-sref="viewSubsidio({id:subsidio.id})">Ver</a>
+              <a class="btn btn-danger"  ng-click="deleteSubsidio(subsidio)">Eliminar</a>
+          </td>
+      </tr>
+  </table>
+  <a ui-sref="newSubsidio" class="btn-primary btn-lg nodecoration">Agregar nuevo</a>
+</div>

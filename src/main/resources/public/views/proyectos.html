@@ -1,9 +1,11 @@
 <div class="container pad-top">
-  <a ui-sref="newProyecto" class="btn-primary btn-lg nodecoration">Agregar nuevo proyecto</a>
+  <h3>Proyectos</h3>
   <table class="table proyectotable">
       <tr>
-          <td><h3>Proyectos</h3></td>
-          <td></td>
+		    <th>Nombre</th>
+		    <th>A&ntilde;o inicio</th>
+		    <th>A&ntilde;o fin</th>
+		    <th>Acciones</th>
       </tr>
       <tr ng-repeat="proyecto in proyectos">
           <td>{{proyecto.nombre}}</td>
@@ -15,4 +17,5 @@
           </td>
       </tr>
   </table>
+  <a ui-sref="newProyecto" class="btn-primary btn-lg nodecoration">Agregar nuevo</a>
 </div>
