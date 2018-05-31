@@ -80,6 +80,24 @@
 	        templateUrl: viewsPrefix + 'subsidio/edit.html',
 	        controller:'SubsidioEditController'
 	    })
+	    /* IMPUTACION */
+	    .state('imputaciones',{
+	       url:'/imputaciones',
+	       templateUrl: viewsPrefix + 'imputacion/imputaciones.html',
+	       controller:'ImputacionListController'
+	    }).state('viewImputacion',{
+	       url:'/imputaciones/:id/view',
+	       templateUrl: viewsPrefix + 'imputacion/view.html',
+	       controller:'ImputacionViewController'
+	    }).state('newImputacion',{
+	        url:'/imputaciones/new',
+	        templateUrl: viewsPrefix + 'imputacion/add.html',
+	        controller:'ImputacionCreateController'
+	    }).state('editImputacion',{
+	        url:'/imputaciones/:id/edit',
+	        templateUrl: viewsPrefix + 'imputacion/edit.html',
+	        controller:'ImputacionEditController'
+	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
 		function($rootScope, $timeout) {

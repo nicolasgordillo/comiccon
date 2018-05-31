@@ -14,4 +14,10 @@ angular.module('app.services', []).factory('Proyecto', function($resource) {
       method: 'PUT'
     }
   });
+}).factory('Imputacion', function($resource) {
+  return $resource('/api/v1/imputaciones/:id', { id: '@id' }, {
+    update: {
+      method: 'PUT'
+    }
+  });
 });

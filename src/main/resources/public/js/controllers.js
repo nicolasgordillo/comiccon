@@ -95,4 +95,52 @@ angular.module('app.controllers', [])
   $scope.back = function() { //Vuelve al listado
 	  $state.go('subsidios'); 
   };
+})
+/* -- IMPUTACION -- */
+.controller('ImputacionListController', function($scope, $state, popupService, $window, Imputacion) {
+	  $scope.entities = Imputacion.query(); //Trae todas las entities. Issues a GET to /api/vi/entities
+	  
+	  $scope.deleteImputacion = function(entity) { // Borra una imputacion. Issues a DELETE to /api/v1/entities/:id
+	    if (popupService.showPopup('Está seguro de eliminar esta imputación?')) {
+	    	entity.$delete(function() {
+	    		$scope.entities = Imputacion.query(); 
+	    		$state.go('imputaciones');
+	    	});
+	    }
+	};
+}).controller('ImputacionViewController', function($scope, $state, $stateParams, Imputacion) {
+	  $scope.entity = Imputacion.get({ id: $stateParams.id }); //Obtiene un unico subsidio. Issues a GET to /api/v1/subsidios/:id
+	  
+	  $scope.back = function() { //Vuelve al listado
+		  $state.go('imputaciones'); 
+	  };
+	  
+}).controller('ImputacionCreateController', function($scope, $state, $stateParams, Imputacion) {
+	  $scope.entity = new Imputacion();  //Crea una nueva instancia de Imputacion. Properties will be set via ng-model on UI
+	
+	  $scope.addImputacion = function() { //Crea una nueva imputacion. Issues a POST to /api/v1/imputaciones
+	    $scope.entity.$save(function() {
+	      $state.go('imputaciones'); // Si sale todo bien vuelve a la lista.
+	    });
+	  };
+	  
+	  $scope.back = function() { //Vuelve al listado
+		  $state.go('imputaciones'); 
+	  };
+}).controller('ImputacionEditController', function($scope, $state, $stateParams, Imputacion) {
+  $scope.updateImputacion = function() { //Actualiza la imputacion editada. Issues a PUT to /api/v1/imputaciones/:id
+    $scope.entity.$update(function() {
+      $state.go('imputaciones'); // Si sale todo bien vuelve a la lista
+    });
+  };
+
+  $scope.loadImputacion = function() { //Issues a GET request to /api/v1/imputaciones/:id to get a imputacion to update
+    $scope.entity = Imputacion.get({ id: $stateParams.id });
+  };
+
+  $scope.loadImputacion(); // Carga una imputacion que puede ser editada en UI
+  
+  $scope.back = function() { //Vuelve al listado
+	  $state.go('imputaciones'); 
+  };
 });
