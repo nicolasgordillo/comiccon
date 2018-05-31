@@ -1,0 +1,43 @@
+<div class="form-group">
+	<!-- 
+	Proyecto
+	{{ entity.subsidio.proyecto.nombre }}
+	 -->
+	 
+	<!-- 
+	Subsidio
+	{{ entity.subsidio.anio }}
+	 -->
+	 
+	<!-- 
+	Inciso
+	{{ entity.incisoProyecto.inciso.numero }}-{{ entity.incisoProyecto.inciso.detalle }}
+	 -->
+	 
+<div class="form-group">
+    <label for="fecha" class="col-sm-2 control-label">Fecha</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="entity.fecha" class="form-control" id="fecha" placeholder="Fecha aaaa-mm-dd" filter="date"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="monto" class="col-sm-2 control-label">Monto</label>
+    <div class="col-sm-10">
+        <input type="number" step="any" min="0" ng-model="entity.monto" class="form-control" id="monto" placeholder="Monto"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="descripcion" class="col-sm-2 control-label">Descripci&oacute;n</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="entity.descripcion" class="form-control" id="descripcion" placeholder="Descripci&oacute;n"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" class="btn btn-primary" value="Guardar"/>
+        <a class="btn btn-primary" ng-click="back()">Cancelar</a>
+    </div>
+</div>

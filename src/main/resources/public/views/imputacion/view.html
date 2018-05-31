@@ -1,0 +1,39 @@
+<div class="container pad-top">
+  <table class="table proyectotable">
+      <tr>
+          <td><h3>Imputaci&oacute;n {{entity.id}}</h3></td>
+          <td></td>
+      </tr>
+      <!--
+      <tr>
+          <td>Proyecto</td>
+          <td>{{ entity.proyecto.nombre }}</td>
+      </tr>
+ 	  <tr>
+     	<td>Subsidio</dt>
+        <td>{{ entity.subsidio.anio }}</dd>
+      </tr>
+       <tr>
+     	<td>Incio</dt>
+        <td>{{ entity.incisoProyecto.inciso.numero }}-{{ entity.incisoProyecto.inciso.detalle }}</dd>
+      </tr>
+      -->
+      <tr>
+          <td>Fecha</td>
+          <td>{{entity.fecha | date:'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr>
+          <td>Monto</td>
+          <td>{{entity.monto | currency}}</td>
+      </tr>
+      <tr>
+          <td>Descripci&oacute;n</td>
+          <td>{{entity.descripcion}}</td>
+      </tr>
+  </table>
+  <div>
+      <a class="btn btn-primary" ui-sref="editImputacion({id:entity.id})">Editar</a>
+      <a class="btn btn-primary" ng-click="back()">Volver</a>
+  </div>
+</div>
+

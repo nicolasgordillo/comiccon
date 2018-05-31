@@ -1,0 +1,31 @@
+<div class="container pad-top">
+<h3>Imputaciones</h3>
+  <table class="table proyectotable">
+      <tr>
+      <!-- 
+        <th>Proyecto</th>
+	    <th>Subsidio</th>
+	    <th>Inciso</th>
+	     -->
+	    <th>Fecha</th>
+	    <th>Monto</th>
+	    <th>Descripci&oacute;n</th>
+		<th>Acciones</th>
+      </tr>
+      <tr ng-repeat="entity in entities">
+      <!-- 
+        <td>{{ entity.subsidio.proyecto.nombre }}</td>
+	    <td>{{ entity.subsidio.anio }}</td>
+	    <td>{{ entity.incisoProyecto.inciso.numero }}-{{ entity.incisoProyecto.inciso.detalle }}</td>
+ 	  -->
+ 	  	<td>{{ entity.fecha | date: 'dd/MM/yyyy' }}</td>
+	    <td>{{ entity.monto | currency }}</td>
+	    <td>{{ entity.descripcion }}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewImputacion({id:entity.id})">Ver</a>
+            <a class="btn btn-danger"  ng-click="deleteImputacion(entity)">Eliminar</a>
+        </td>
+      </tr>
+  </table>
+  <a ui-sref="newImputacion" class="btn-primary btn-lg nodecoration">Agregar nuevo</a>
+</div>
