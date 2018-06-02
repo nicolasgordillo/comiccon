@@ -98,6 +98,24 @@
 	        templateUrl: viewsPrefix + 'imputacion/edit.html',
 	        controller:'ImputacionEditController'
 	    })
+	     /* INCISOS PROYECTO */
+	    .state('incisosProyecto',{
+	       url:'/incisosProyecto',
+	       templateUrl: viewsPrefix + 'incisoProyecto/incisosProyecto.html',
+	       controller:'IncisoProyectoListController'
+	    }).state('viewIncisoProyecto',{
+	       url:'/incisosProyecto/:id/view',
+	       templateUrl: viewsPrefix + 'incisoProyecto/view.html',
+	       controller:'IncisoProyectoViewController'
+	    }).state('newIncisoProyecto',{
+	        url:'/incisosProyecto/new',
+	        templateUrl: viewsPrefix + 'incisoProyecto/add.html',
+	        controller:'IncisoProyectoCreateController'
+	    }).state('editIncisoProyecto',{
+	        url:'/incisosProyecto/:id/edit',
+	        templateUrl: viewsPrefix + 'incisoProyecto/edit.html',
+	        controller:'IncisoProyectoEditController'
+	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
 		function($rootScope, $timeout) {

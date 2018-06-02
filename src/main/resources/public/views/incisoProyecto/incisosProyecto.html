@@ -1,0 +1,25 @@
+<div class="container pad-top">
+<h3>Incisos Proyecto</h3>
+  <table class="table proyectotable">
+      <tr>
+      <!-- 
+        <th>Proyecto</th>
+	   -->
+	    <th>Monto</th>
+	    <th>A&ntilde;o</th>
+		<th>Acciones</th>
+      </tr>
+      <tr ng-repeat="entity in entities">
+      <!-- 
+        <td>{{ entity.proyecto.nombre }}</td>
+ 	  -->
+	    <td>{{ entity.monto | currency }}</td>
+	    <td>{{ entity.anio }}</td>
+        <td>
+            <a class="btn btn-primary" ui-sref="viewIncisoProyecto({id:entity.id})">Ver</a>
+            <a class="btn btn-danger"  ng-click="deleteIncisoProyecto(entity)">Eliminar</a>
+        </td>
+      </tr>
+  </table>
+  <a ui-sref="newIncisoProyecto" class="btn-primary btn-lg nodecoration">Agregar nuevo</a>
+</div>

@@ -109,7 +109,7 @@ angular.module('app.controllers', [])
 	    }
 	};
 }).controller('ImputacionViewController', function($scope, $state, $stateParams, Imputacion) {
-	  $scope.entity = Imputacion.get({ id: $stateParams.id }); //Obtiene un unico subsidio. Issues a GET to /api/v1/subsidios/:id
+	  $scope.entity = Imputacion.get({ id: $stateParams.id }); //Obtiene una unica imputacion. Issues a GET to /api/v1/subsidios/:id
 	  
 	  $scope.back = function() { //Vuelve al listado
 		  $state.go('imputaciones'); 
@@ -143,4 +143,53 @@ angular.module('app.controllers', [])
   $scope.back = function() { //Vuelve al listado
 	  $state.go('imputaciones'); 
   };
+})
+/* -- INCISOS PROYECTO -- */
+.controller('IncisoProyectoListController', function($scope, $state, popupService, $window, IncisoProyecto) {
+	  $scope.entities = IncisoProyecto.query(); //Trae todas las entities. Issues a GET to /api/vi/entities
+	  
+	  $scope.deleteIncisoProyecto = function(entity) { // Borra un inciso. Issues a DELETE to /api/v1/entities/:id
+	    if (popupService.showPopup('Está seguro de eliminar este inciso?')) {
+	    	entity.$delete(function() {
+	    		$scope.entities = IncisoProyecto.query(); 
+	    		$state.go('incisosProyecto');
+	    	});
+	    }
+	};
+}).controller('IncisoProyectoViewController', function($scope, $state, $stateParams, IncisoProyecto) {
+	  $scope.entity = IncisoProyecto.get({ id: $stateParams.id }); //Obtiene un unico IncisoProyecto. Issues a GET to /api/v1/incisosProyecto/:id
+	  
+	  $scope.back = function() { //Vuelve al listado
+		  $state.go('incisosProyecto'); 
+	  };
+	  
+}).controller('IncisoProyectoCreateController', function($scope, $state, $stateParams, IncisoProyecto) {
+	  $scope.entity = new IncisoProyecto();  //Crea una nueva instancia de IncisoProyecto. Properties will be set via ng-model on UI
+	
+	  $scope.addIncisoProyecto = function() { //Crea un nuevo IncisoProyecto. Issues a POST to /api/v1/incisosProyecto
+	    $scope.entity.$save(function() {
+	      $state.go('incisosProyecto'); // Si sale todo bien vuelve a la lista.
+	    });
+	  };
+	  
+	  $scope.back = function() { //Vuelve al listado
+		  $state.go('incisosProyecto'); 
+	  };
+}).controller('IncisoProyectoEditController', function($scope, $state, $stateParams, IncisoProyecto) {
+  $scope.updateIncisoProyecto = function() { //Actualiza incisoProyecto editada. Issues a PUT to /api/v1/incisosProyecto/:id
+    $scope.entity.$update(function() {
+      $state.go('incisosProyecto'); // Si sale todo bien vuelve a la lista
+    });
+  };
+
+  $scope.loadIncisoProyecto = function() { //Issues a GET request to /api/v1/incisosProyecto/:id to get a incisoProyecto to update
+    $scope.entity = IncisoProyecto.get({ id: $stateParams.id });
+  };
+
+  $scope.loadIncisoProyecto(); // Carga un incisoProyecto que puede ser editada en UI
+  
+  $scope.back = function() { //Vuelve al listado
+	  $state.go('incisosProyecto'); 
+  };
 });
+

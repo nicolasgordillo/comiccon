@@ -20,4 +20,10 @@ angular.module('app.services', []).factory('Proyecto', function($resource) {
       method: 'PUT'
     }
   });
+}).factory('IncisoProyecto', function($resource) {
+  return $resource('/api/v1/incisosProyecto/:id', { id: '@id' }, {
+    update: {
+      method: 'PUT'
+    }
+  });
 });

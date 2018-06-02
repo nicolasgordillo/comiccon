@@ -1,0 +1,27 @@
+<div class="container pad-top">
+  <table class="table proyectotable">
+      <tr>
+          <td><h3>Inciso Proyecto {{entity.id}}</h3></td>
+          <td></td>
+      </tr>
+      <!--
+      <tr>
+          <td>Proyecto</td>
+          <td>{{ entity.proyecto.nombre }}</td>
+      </tr>
+      -->
+      <tr>
+          <td>Monto</td>
+          <td>{{entity.monto | currency}}</td>
+      </tr>
+      <tr>
+          <td>A&ntilde;o</td>
+          <td>{{entity.anio}}</td>
+      </tr>
+  </table>
+  <div>
+      <a class="btn btn-primary" ui-sref="editIncisoProyecto({id:entity.id})">Editar</a>
+      <a class="btn btn-primary" ng-click="back()">Volver</a>
+  </div>
+</div>
+

@@ -1,33 +1,68 @@
 package com.boot.subsidios.model;
 
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable
 public class IncisoProyecto {
-	Long id;
-	Float monto;
-	Integer anio;
+	long id;
+	float monto;
+	int anio;
+	//Proyecto proyecto;
 	
-	public IncisoProyecto(Long id, Float monto, Integer anio) {
+	/**
+	 * 
+	 */
+	public IncisoProyecto() {
+		super();
+	}
+
+	/**
+	 * @param id
+	 * @param monto
+	 * @param anio
+	 * @param proyecto
+	 */
+	public IncisoProyecto(long id, float monto, int anio/*, Proyecto proyecto*/) {
 		super();
 		this.id = id;
 		this.monto = monto;
 		this.anio = anio;
+		//this.proyecto = proyecto;
+		
 	}
-	
-	public Long getId() {
+
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+
+	public void setId(long id) {
 		this.id = id;
 	}
-	public Float getMonto() {
+
+	public float getMonto() {
 		return monto;
 	}
-	public void setMonto(Float monto) {
+
+	public void setMonto(float monto) {
 		this.monto = monto;
 	}
-	public Integer getAnio() {
+
+	public int getAnio() {
 		return anio;
 	}
-	public void setAnio(Integer anio) {
+
+	public void setAnio(int anio) {
 		this.anio = anio;
 	}
+
+	/*
+	public Proyecto getProyecto() {
+		return proyecto;
+	}
+
+	public void setProyecto(Proyecto proyecto) {
+		this.proyecto = proyecto;
+	}
+	*/
+	
 }

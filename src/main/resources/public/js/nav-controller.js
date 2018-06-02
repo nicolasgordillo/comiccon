@@ -25,6 +25,10 @@ angular.module('navController', [])
 			{
 				name: 'Imputaciones',
 				url: '#/imputaciones'
+			},
+			{
+				name: 'Incisos Proyecto',
+				url: '#/incisosProyecto'
 			}
 		]
 	});
