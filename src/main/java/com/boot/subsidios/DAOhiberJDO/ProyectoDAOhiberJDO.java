@@ -2,11 +2,14 @@ package com.boot.subsidios.DAOhiberJDO;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.boot.subsidios.DAO.ProyectoDAO;
 import com.boot.subsidios.model.*;
 
 public class ProyectoDAOhiberJDO extends GenericDAOhiberJDO<Proyecto>  implements ProyectoDAO{
-		
+	
+		@Autowired
 		public ProyectoDAOhiberJDO() {
 			super(Proyecto.class);
 		}

@@ -18,8 +18,8 @@ public class GenericDAOhiberJDO<T> implements GenericDAO<T> {
 		this.persistenceManager = PMF.getPM();
 	}	
 	
-	public void save(T newInstance) {
-		persistenceManager.makePersistent(newInstance);	
+	public T save(T newInstance) {
+		return persistenceManager.makePersistent(newInstance);	
 	}
 
 	public void update(T persistenceInstance) {

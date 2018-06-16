@@ -9,15 +9,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boot.subsidios.model.Proyecto;
+import com.boot.subsidios.repository.ProyectoRepository;
 import com.boot.subsidios.repository.ProyectoStub;
 
 @RestController
 @RequestMapping("api/v1/")
 public class ProyectoController {
 
+	private ProyectoRepository repository;
+	
 	@RequestMapping(value = "proyectos", method = RequestMethod.GET)
 	public List<Proyecto> list() {
-		return ProyectoStub.list();
+		//return ProyectoStub.list();
+		return repository.list();
 	}
 	
 	@RequestMapping(value = "proyectos/{id}", method = RequestMethod.GET)
@@ -25,6 +29,7 @@ public class ProyectoController {
 		return ProyectoStub.get(id);
 	}
 	
+	//@Transactional
 	@RequestMapping(value = "proyectos", method = RequestMethod.POST)
 	public Proyecto create(@RequestBody Proyecto proyecto) {
 		return ProyectoStub.create(proyecto);

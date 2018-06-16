@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface GenericDAO<T> {
 		
-	public void save(T newInstance);
+	public T save(T newInstance);
 	
 	public void update(T persistenceInstance);
 	
